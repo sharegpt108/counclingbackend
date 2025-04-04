@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: ["*", "https://lakshay-path.onrender.com", "http://localhost:5173"], // Use the exact frontend URL without '/'
+    origin: ["*", "https://counclingbackend.vercel.app/api", "http://localhost:5173"], // Use the exact frontend URL without '/'
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
