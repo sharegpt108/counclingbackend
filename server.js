@@ -2,7 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
 const cors = require('cors');
-const morgan = require('morgan');
 const connectDB = require('./db/db');
 const path = require('path')
 const enquiryRoutes = require('./routes/enquiry.routes');
@@ -18,9 +17,8 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
 app.use(express.json());
-app.use(morgan('dev'));
 
 const PORT = process.env.PORT || 5000;
 
@@ -28,7 +26,7 @@ app.use('/api/enquiry', enquiryRoutes);
 app.use('/api/register', registerRoutes);
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    res.send("hi");
   });
 
 app.listen(PORT, () => {
