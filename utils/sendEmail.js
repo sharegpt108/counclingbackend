@@ -14,7 +14,7 @@ const sendEmail = async (userEmail, sub, msg) => {
     });
 
     try {
-        // Send email to both user and your  email
+        // Send email to both user and your email
         const info = await transport.sendMail({
             from: `"Dhairya Jain" <${process.env.EMAIL_ID}>`,
             to: [userEmail, process.env.MY_EMAIL],  // Sending email to both user and you
