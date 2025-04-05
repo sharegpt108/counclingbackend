@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-    origin: ["https://vip-vite-react-fend.vercel.app/", "http://localhost:5173"], // Use the exact frontend URL without '/'
+    origin: ["https://counclingbackend.vercel.app/", "http://localhost:5173"], // Use the exact frontend URL without '/'
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
